@@ -1,0 +1,29 @@
+{
+	"manifest_version" : 2,
+	"name": "ProbQueue",
+	"version" : "1.0",
+	"description": "Keeps links handy",
+
+	"web_accessible_resources": [
+    	"ic128.gif","48ic.gif","16ic.gif"
+  	],
+	"browser_action":{
+		"default_popup":"popup.html"
+	},
+	"background":{
+  		"scripts": ["background.js"]
+	},
+	"content_scripts": [
+        {
+        "matches": [
+            "http://*/*",
+            "https://*/*",
+            "<all_urls>"
+            ],
+        "js": ["content2.js"]
+        }
+    ],
+	"permissions": [
+    	"tabs","notifications","activeTab"
+	]
+}
